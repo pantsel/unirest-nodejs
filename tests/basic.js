@@ -73,7 +73,7 @@ describe('Unirest', function () {
     it('should correctly handle refused connections.', function (done) {
       unirest.get('http://localhost:9999').timeout(200).end(function (response) {
         response.error.should.exist
-        response.error.code.should.equal('ECONNREFUSED')
+        response.error.code.should.equal('ETIMEDOUT')
         done()
       })
     })
