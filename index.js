@@ -223,7 +223,7 @@ var Unirest = function (method, uri, headers, body, callback) {
       type: function (type) {
         $this.header('Content-Type', does(type).contain('/')
           ? type
-          : mime.lookup(type))
+          : mime.getType(type))
         return $this
       },
 
